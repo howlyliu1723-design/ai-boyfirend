@@ -2,7 +2,7 @@ import streamlit as st
 
 # 页面配置
 PAGE_CONFIG = {
-    "page_title": "赛博昊理-老么爱你",
+    "page_title": "赛博昊理",
     "page_icon": "🥰",
     "layout": "wide",
     "initial_sidebar_state": "expanded",
@@ -27,6 +27,7 @@ def setup_page():
     """设置页面配置"""
     st.set_page_config(**PAGE_CONFIG)
     st.title("赛博昊理")
+
 
 
 
