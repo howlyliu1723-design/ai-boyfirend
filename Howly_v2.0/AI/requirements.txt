@@ -1,0 +1,13 @@
+# Howly AI Chatbot - Dependencies
+# 项目依赖包列表
+
+# 核心依赖
+openai==1.40.0           # OpenAI API客户端，用于调用DeepSeek等大模型API
+streamlit==1.37.0        # Streamlit框架，用于构建Web应用界面
+
+# 其他可能需要的依赖
+requests>=2.31.0         # HTTP请求库
+python-dotenv>=1.0.0     # 环境变量管理
+
+# Python标准库组件（无需安装）
+# os, json, datetime 等模块已包含在Python标准库中
