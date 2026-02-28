@@ -99,7 +99,7 @@ def render_sidebar():
         st.subheader("我的信息", divider="blue")
         st.text("我是赛博昊理")
         st.text("我长这个样子")
-        st.image("https://github.com/howlyliu1723-design/ai-boyfirend/blob/main/Howly_v2.0/AI/images/logo.jpg")
+        st.image("images/logo.jpg", caption="赛博昊理", width=200))
 
 
         character = st.text_area("我的性格", placeholder="你想我是什么性格呀", value="")
@@ -164,4 +164,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
