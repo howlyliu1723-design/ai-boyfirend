@@ -62,7 +62,10 @@ def initialize_session_state():
     if "session_id" not in st.session_state:
         time_now = datetime.datetime.now()
         st.session_state.session_id = time_now.strftime("%Y-%m-%d_%H-%M-%S")
-
+    if "user_avatar" not in st.session_state:
+        st.session_state.user_avatar = "👩"  # 用户头像
+    if "ai_avatar" not in st.session_state:
+        st.session_state.ai_avatar = "🥰"    # AI头像（赛博昊理）
 
 def render_sidebar():
     """渲染侧边栏"""
@@ -177,6 +180,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
 
 
