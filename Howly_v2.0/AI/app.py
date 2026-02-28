@@ -8,6 +8,10 @@ from session_manager import (
     delete_session, create_new_session
 )
 
+# 获取当前脚本所在目录，确保图片路径正确
+CURRENT_DIR = os.path.dirname(os.path.abspath(__file__))
+IMAGE_PATH = os.path.join(CURRENT_DIR, "images", "logo.jpg")
+
 
 class AIService:
     def __init__(self):
@@ -99,8 +103,17 @@ def render_sidebar():
         st.subheader("我的信息", divider="blue")
         st.text("我是赛博昊理")
         st.text("我长这个样子")
-        st.image("images/logo.jpg", caption="赛博昊理", width=200)
-
+        
+        # 使用绝对路径加载图片，添加错误处理
+        try:
+            if os.path.exists(IMAGE_PATH):
+                st.image(IMAGE_PATH, caption="赛博昊理", width=200)
+            else:
+                st.warning("图片文件未找到")
+                st.info("📁 期待见到帅气的赛博昊理！")
+        except Exception as e:
+            st.error(f"图片加载出错: {str(e)}")
+            st.info("🤖 但我们的聊天功能完全正常！")
 
         character = st.text_area("我的性格", placeholder="你想我是什么性格呀", value="")
         if character:
@@ -164,6 +177,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
 
 
