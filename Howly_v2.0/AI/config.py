@@ -26,7 +26,8 @@ SYSTEM_PROMPT_TEMPLATE = (
 def setup_page():
     """设置页面配置"""
     st.set_page_config(**PAGE_CONFIG)
-    st.title("赛博昊理")
+    st.title("赛博昊理，上知天文，下知爱你")
+
 
 
 
