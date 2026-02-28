@@ -100,7 +100,7 @@ def render_sidebar():
 
         # 分隔线和个人信息
         st.text("➖ ➖ ➖ ➖ ➖ ➖ ➖ ➖ ➖ ➖   ")
-        st.subheader("我的信息", divider="blue")
+        st.subheader("我的帅气大脸", divider="blue")
         st.text("我是赛博昊理")
         st.text("我长这个样子")
         
@@ -177,6 +177,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
 
 
