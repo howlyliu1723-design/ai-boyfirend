@@ -1,2 +1,1 @@
-# ai-boyfirend
-ai-boyfirend
+# ai-boyfirend,基于黑马程序员课程的实践小项目，自学爱好者水平有限
