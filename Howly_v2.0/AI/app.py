@@ -110,7 +110,7 @@ def render_sidebar():
         # 使用绝对路径加载图片，添加错误处理
         try:
             if os.path.exists(IMAGE_PATH):
-                st.image(IMAGE_PATH, caption="赛博昊理", width=200)
+                st.image(IMAGE_PATH, width=200)
             else:
                 st.warning("图片文件未找到")
                 st.info("📁 期待见到帅气的赛博昊理！")
@@ -183,6 +183,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
 
 
