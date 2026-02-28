@@ -127,18 +127,22 @@ def display_chat_history():
     """显示聊天历史"""
     for message in st.session_state.messages:
         if message["role"] == "user":
-            st.chat_message("user").write(message["content"])
+            # 用户消息 - 使用字符头像
+            with st.chat_message("user", avatar=st.session_state.user_avatar):
+                st.write(message["content"])
         else:
-            st.chat_message("assistant").write(message["content"])
-
+            # AI消息 - 使用字符头像
+            with st.chat_message("assistant", avatar=st.session_state.ai_avatar):
+                st.write(message["content"])
 
 def handle_user_input(ai_service):
     """处理用户输入"""
-    prompt = st.chat_input("你好啊 嗝嗝~")
+    prompt = st.chat_input("和我说点什么吧~")
 
     if prompt:
-        # 显示用户输入
-        st.chat_message("user").write(prompt)
+        # 显示用户输入（带字符头像）
+        with st.chat_message("user", avatar=st.session_state.user_avatar):
+            st.write(prompt)
 
         # 保存用户消息
         st.session_state.messages.append({"role": "user", "content": prompt})
@@ -146,18 +150,17 @@ def handle_user_input(ai_service):
         # 获取AI响应
         response = ai_service.get_response(st.session_state.messages, st.session_state.character)
 
-        # 显示流式响应
-        response_container = st.empty()
-        full_response = ""
+        # 显示流式响应（带字符头像）
+        with st.chat_message("assistant", avatar=st.session_state.ai_avatar):
+            response_container = st.empty()
+            full_response = ""
 
-        for partial_response in ai_service.process_stream_response(response):
-            response_container.chat_message("assistant").write(partial_response)
-            full_response = partial_response
+            for partial_response in ai_service.process_stream_response(response):
+                response_container.write(partial_response)
+                full_response = partial_response
 
         # 保存AI回复
         st.session_state.messages.append({"role": "assistant", "content": full_response})
-
-        # 保存会话
         save_session()
 
 
@@ -180,6 +183,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
 
 
