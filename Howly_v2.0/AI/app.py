@@ -70,7 +70,7 @@ def render_sidebar():
         st.header("我的简单脑袋")
 
         # 新建会话按钮
-        if st.button("新建会话", icon="➕", width="stretch"):
+        if st.button("新建唠嗑", icon="➕", width="stretch"):
             if st.session_state.messages:  # 如果有聊天记录
                 create_new_session()
                 st.rerun()
@@ -78,7 +78,7 @@ def render_sidebar():
                 st.error("还没和我说话就想找别人了？")
 
         # 会话历史列表
-        st.text("会话历史")
+        st.text("都唠过啥")
         session_list = load_sessions()
 
         for session in session_list:
@@ -177,6 +177,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
 
 
