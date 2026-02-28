@@ -67,7 +67,7 @@ def initialize_session_state():
 def render_sidebar():
     """渲染侧边栏"""
     with st.sidebar:
-        st.header("控制台")
+        st.header("我的简单脑袋")
 
         # 新建会话按钮
         if st.button("新建会话", icon="➕", width="stretch"):
@@ -177,6 +177,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
 
 
