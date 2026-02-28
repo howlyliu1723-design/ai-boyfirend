@@ -137,7 +137,7 @@ def display_chat_history():
 
 def handle_user_input(ai_service):
     """处理用户输入"""
-    prompt = st.chat_input("和我说点什么吧~")
+    prompt = st.chat_input("说点什么嗝嗝~")
 
     if prompt:
         # 显示用户输入（带字符头像）
@@ -183,6 +183,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
 
 
